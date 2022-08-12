@@ -1,0 +1,8 @@
+{
+  "$schema": "./node_modules/nx/schemas/workspace-schema.json",
+  "version": 2,
+  "projects": {
+    "frosted-ui": "apps/frosted-ui",
+    "frosted-ui-e2e": "apps/frosted-ui-e2e"
+  }
+}
