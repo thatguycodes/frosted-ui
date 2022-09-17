@@ -16,4 +16,4 @@ import {CdkTableModule} from '@angular/cdk/table';
     TableComponent
   ]
 })
-export class ComponentsModule { }
+export class TableModule { }

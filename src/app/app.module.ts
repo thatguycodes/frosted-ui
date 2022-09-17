@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { ComponentsModule } from 'projects/components/src/lib/table/public-api';
+import { TableModule } from 'projects/components/src/lib/table/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,7 +12,7 @@ import { AppComponent } from './app.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ComponentsModule
+    TableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
