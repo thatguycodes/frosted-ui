@@ -1,1 +1,53 @@
-<lib-table></lib-table>
+<!-- <lib-table lib-tab [dataSource]="dataSource">
+
+  <ng-container libColumnDef="username">
+    <lib-header-cell *libHeaderCellDef> User name </lib-header-cell>
+    <lib-cell *libCellDef="let row"> {{row.username}} </lib-cell>
+  </ng-container>
+
+  <!-- Age Definition -->
+  <!-- <ng-container libColumnDef="age">
+    <lib-header-cell *libHeaderCellDef> Age </lib-header-cell>
+    <lib-cell *libCellDef="let row"> {{row.age}} </lib-cell>
+  </ng-container> -->
+
+  <!-- Title Definition -->
+  <!-- <ng-container libColumnDef="title">
+    <lib-header-cell *libHeaderCellDef> Title </lib-header-cell>
+    <lib-cell *libCellDef="let row"> {{row.title}} </lib-cell>
+  </ng-container> -->
+
+  <!-- Header and Row Declarations -->
+  <!-- <lib-header-row *libHeaderRowDef="['username', 'age', 'title']"></lib-header-row>
+  <lib-row *libRowDef="let row; columns: ['username', 'age', 'title']"></lib-row>
+</lib-table> -->
+
+
+<table lib-table [dataSource]="dataSource">
+  <!-- Position Column -->
+  <ng-container libColumnDef="position">
+    <th lib-header-cell *libHeaderCellDef> No. </th>
+    <td lib-cell *libCellDef="let element"> {{element.position}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container libColumnDef="name">
+    <th lib-header-cell *libHeaderCellDef> Name </th>
+    <td lib-cell *libCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container libColumnDef="weight">
+    <th lib-header-cell *libHeaderCellDef> Weight </th>
+    <td lib-cell *libCellDef="let element"> {{element.weight}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container libColumnDef="symbol">
+    <th lib-header-cell *libHeaderCellDef> Symbol </th>
+    <td lib-cell *libCellDef="let element"> {{element.symbol}} </td>
+  </ng-container>
+
+  <tr lib-header-row *libHeaderRowDef="displayedColumns"></tr>
+  <tr lib-row *libRowDef="let row; columns: displayedColumns;"></tr>
+</table>
