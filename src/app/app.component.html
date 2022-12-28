@@ -1,28 +1,3 @@
-<!-- <lib-table lib-tab [dataSource]="dataSource">
-
-  <ng-container libColumnDef="username">
-    <lib-header-cell *libHeaderCellDef> User name </lib-header-cell>
-    <lib-cell *libCellDef="let row"> {{row.username}} </lib-cell>
-  </ng-container>
-
-  <!-- Age Definition -->
-  <!-- <ng-container libColumnDef="age">
-    <lib-header-cell *libHeaderCellDef> Age </lib-header-cell>
-    <lib-cell *libCellDef="let row"> {{row.age}} </lib-cell>
-  </ng-container> -->
-
-  <!-- Title Definition -->
-  <!-- <ng-container libColumnDef="title">
-    <lib-header-cell *libHeaderCellDef> Title </lib-header-cell>
-    <lib-cell *libCellDef="let row"> {{row.title}} </lib-cell>
-  </ng-container> -->
-
-  <!-- Header and Row Declarations -->
-  <!-- <lib-header-row *libHeaderRowDef="['username', 'age', 'title']"></lib-header-row>
-  <lib-row *libRowDef="let row; columns: ['username', 'age', 'title']"></lib-row>
-</lib-table> -->
-
-
 <table lib-table [dataSource]="dataSource">
   <!-- Position Column -->
   <ng-container libColumnDef="position">
@@ -48,6 +23,13 @@
     <td lib-cell *libCellDef="let element"> {{element.symbol}} </td>
   </ng-container>
 
+  <ng-container libColumnDef="delete">
+    <th lib-header-cell *libHeaderCellDef> Delete </th>
+    <td lib-cell *libCellDef="let element">  <button class="btn">delete</button> </td>
+  </ng-container>
+
   <tr lib-header-row *libHeaderRowDef="displayedColumns"></tr>
   <tr lib-row *libRowDef="let row; columns: displayedColumns;"></tr>
 </table>
+
+<lib-table><ng-content></ng-content></lib-table>
