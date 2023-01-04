@@ -15,6 +15,7 @@ export class SideNavComponent implements OnInit {
 	@Input() HOME: string = 'Home';
 	@Output() redirectionUrl: EventEmitter<string> = new EventEmitter();
 	@Output() logout: EventEmitter<string> = new EventEmitter();
+	@Output() termsAndConditions: EventEmitter<string> = new EventEmitter();
 	@Output() currentState: EventEmitter<any> = new EventEmitter();
 	@Input() state: any | undefined;
 	newMainMenu: any;
@@ -22,7 +23,6 @@ export class SideNavComponent implements OnInit {
 	collapsed: boolean = false;
 	_url: string = '';
 	isMouseOver: boolean | undefined;
-	menuItemSelected: boolean = false;
 
 	@Input()
 	get url() {
@@ -37,7 +37,7 @@ export class SideNavComponent implements OnInit {
 		if (this.state?.level === 0 || this.state?.level === null || this.state?.level === undefined) {
 			this.sidenav.setMenu(this.menus);
 		} else {
-      console.log(this.state);
+      this.sidenav.setMenu(this.menus);
 			this.sidenav.restoreState(this.state);
 		}
 
@@ -46,7 +46,6 @@ export class SideNavComponent implements OnInit {
 		this.sidenav.collapsed.subscribe(collapsed => (this.collapsed = collapsed));
 		this.sidenav.updateSelectedUrl(this.url);
 		this.sidenav.currentUrl.subscribe(currentUrl => this.url = currentUrl);
-    console.log(this.newMainMenu, this.level );
 
 	}
 	getActiveClass(data: INavbarData): string {
@@ -60,12 +59,17 @@ export class SideNavComponent implements OnInit {
 
 	selectNav(menu: any) {
 		if (menu?.items?.length === 0 || !menu?.items) {
+      if (menu.routeLink === this.menus[0].routeLink) {
+        this.collapsed = false;
+        this.sidenav.collapseNav(this.collapsed);
+
+      } else {
+        this.collapsed = !this.collapsed;
+        this.sidenav.collapseNav(this.collapsed);
+      }
 			this.currentState.emit({
 				level: this.level,
 			});
-			this.collapsed = !this.collapsed;
-			this.sidenav.collapseNav(this.collapsed);
-			this.menuItemSelected = !this.menuItemSelected;
 			this.redirectionUrl.emit(menu.routeLink);
 			this.sidenav.updateSelectedUrl(this.url);
 			return;
@@ -77,7 +81,9 @@ export class SideNavComponent implements OnInit {
 
 	back(): void {
 		this.sidenav.subtractTreeLevel(this.level);
-		this.sidenav.back();
+		const menu = this.sidenav.back();
+    this.redirectionUrl.emit(menu.routeLink)
+
 	}
 	updateUrl(routeLink: string): void {
 		this.redirectionUrl.emit(routeLink);
@@ -90,4 +96,7 @@ export class SideNavComponent implements OnInit {
 	logOut(): void {
 		this.logout.emit('logout');
 	}
+  tandC() {
+    this.termsAndConditions.emit('termsAndConditions');
+  }
 }

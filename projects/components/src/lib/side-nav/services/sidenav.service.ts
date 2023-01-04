@@ -54,6 +54,7 @@ export class SidenavService {
 	back() {
 		this.pagination.pop();
 		this.workingMenu$.next(this.pagination[this.pagination?.length - 1]?.menu);
+    return this.pagination[this.pagination?.length - 1]?.menu;
 	}
 	getPagination() {
 		return this.pagination;

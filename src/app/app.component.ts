@@ -47,7 +47,7 @@ export class AppComponent implements OnInit {
   //   pagination: []
   // };
   stateFromClient: any;
-  selectedUrl: string = 'home';
+  selectedUrl: string = '/home';
 
   constructor(private router: Router) {}
   ngOnInit(): void {
@@ -66,7 +66,6 @@ export class AppComponent implements OnInit {
   redirectTo(url: string) {
     this.router.navigate([url]);
     this.selectedUrl = url;
-
   }
 
   updateSideNavState(state: any) {

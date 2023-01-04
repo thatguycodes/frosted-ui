@@ -1,6 +1,6 @@
 <!-- This component is the parent wrapping up the side nav -->
 
-<div class="side-panel" [ngClass]="collapsed ? 'side-panel-collapsed' : ''" libMouseover>
+<div class="side-panel" [ngClass]="collapsed ? 'side-panel-collapsed' : ''" [libMouseover]="url">
 	<div class="side-panel-wrapper">
 		<div class="side-panel-header" [ngClass]="collapsed ? 'side-panel-header-collapsed' : ''">
 			<ng-content selelct="[logo]"></ng-content>
@@ -80,8 +80,8 @@
 					<span class="side-panel-body-content-link-text" *ngIf="!collapsed">Log out</span>
 				</li>
 			</ul>
-			<a [href]="termsAndConditionsUrl" tabindex="0" class="side-panel-footer-tnc" *ngIf="!collapsed">Terms and conditions</a>
-			<a [href]="termsAndConditionsUrl" tabindex="0" class="side-panel-footer-tnc" *ngIf="collapsed">T&C</a>
+			<a [href]="termsAndConditionsUrl" tabindex="0" class="side-panel-footer-tnc" *ngIf="!collapsed" (click)="tandC()">Terms and conditions</a>
+			<a [href]="termsAndConditionsUrl" tabindex="0" class="side-panel-footer-tnc" *ngIf="collapsed" (click)="tandC()">T&C</a>
 		</div>
 	</div>
 </div>
