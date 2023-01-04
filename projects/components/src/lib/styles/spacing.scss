@@ -1,0 +1,242 @@
+// letter-spacing
+$letter-spacing-1: 1px;
+$letter-spacing-02: -0.2px;
+$letter-spacing-04: -0.4px;
+$letter-spacing-05: -0.5px;
+$letter-spacing-08: 0.8px;
+
+// Space
+$inline-4: 4px;
+$inline-8: 8px;
+$inline-12: 12px;
+$inline-16: 16px;
+$inline-18: 18px;
+$inline-20: 20px;
+$inline-22: 22px;
+$inline-24: 24px;
+$inline-28: 28px;
+$inline-30: 30px;
+$inline-32: 32px;
+$inline-36: 36px;
+$inline-40: 40px;
+$inline-44: 44px;
+$inline-48: 48px;
+$inline-56: 56px;
+$inline-60: 60px;
+$inline-64: 64px;
+$inline-68: 68px;
+$inline-72: 72px;
+$inline-76: 76px;
+$inline-80: 80px;
+$inline-84: 84px;
+$space-none: 0px;
+
+// Inset - square/equal space around
+$inset-24: 24px 24px 24px 24px;
+$inset-32: 32px 32px 32px 32px;
+$inset-64: 64px 64px 64px 64px;
+
+// Stretch - reducing space on left and right
+$stretch-56-40: $inline-56 $inline-40;
+$stretch-60-12: $inline-60 $inline-12;
+
+// Stack - vertical spacing
+$stack-4: 0 0 4px 0;
+$stack-8: 0 0 8px 0;
+$stack-12: 0 0 12px 0;
+$stack-16: 0 0 16px 0;
+$stack-20: 0 0 20px 0;
+$stack-24: 0 0 24px 0;
+$stack-28: 0 0 28px 0;
+$stack-32: 0 0 32px 0;
+$stack-36: 0 0 36px 0;
+$stack-40: 0 0 40px 0;
+$stack-44: 0 0 44px 0;
+$stack-48: 0 0 48px 0;
+$stack-56: 0 0 56px 0;
+$stack-60: 0 0 60px 0;
+$stack-64: 0 0 64px 0;
+$stack-80: 0 0 80px 0;
+$stack-84: 0 0 84px 0;
+
+.stretch-56-40 {
+    padding: $stretch-56-40;
+}
+
+.padding-20 {
+    padding: $inline-20;
+}
+
+.padding-24 {
+    padding: $inline-24;
+}
+
+.padding-28 {
+    padding: $inline-28;
+}
+
+.padding-32 {
+    padding: $inline-32;
+}
+
+.padding-36 {
+    padding: $inline-36;
+}
+
+.padding-40 {
+    padding: $inline-40;
+}
+
+.padding-44 {
+    padding: $inline-44;
+}
+
+.padding-48 {
+    padding: $inline-48;
+}
+
+.padding-56 {
+    padding: $inline-56;
+}
+
+.padding-64 {
+    padding: $inline-64;
+}
+
+.padding-68 {
+    padding: $inline-68;
+}
+
+.padding-80 {
+    padding: $inline-80;
+}
+
+.padding-84 {
+    padding: $inline-84;
+}
+
+.margin-20 {
+    margin: $inline-20;
+}
+
+.margin-24 {
+    margin: $inline-24;
+
+    &_bottom {
+        margin-bottom: $stack-24;
+    }
+}
+
+.margin-28 {
+    margin: $inline-28;
+}
+
+.margin-32 {
+    margin: $inline-32;
+}
+
+.margin-36 {
+    margin: $inline-36;
+}
+
+.margin-40 {
+    margin: $inline-40;
+}
+
+.margin-44 {
+    margin: $inline-44;
+}
+
+.margin-48 {
+    margin: $inline-48;
+}
+
+.margin-56 {
+    margin: $inline-56;
+}
+
+.margin-64 {
+    margin: $inline-64;
+}
+
+.margin-68 {
+    margin: $inline-68;
+}
+
+.margin-80 {
+    margin: $inline-80;
+}
+
+.margin-84 {
+    margin: $inline-84;
+}
+
+// Inset - square/equal space around - to be deprecated
+$space-inset-xs: 4px 4px 4px 4px;
+$space-inset-s: 8px 8px 8px 8px;
+$space-inset-m: 16px 16px 16px 16px;
+$space-inset-l: 24px 24px 24px 24px;
+$space-inset-xl: 32px 32px 32px 32px;
+$space-inset-xxl: 64px 64px 64px 64px;
+
+// Squish inset- reducing space top and bottom
+$space-squish-s: 4px 8px 4px 8px;
+$space-squish-m: 8px 16px 8px 16px;
+$space-squish-l: 16px 32px 16px 32px;
+$space-squish-xl: 24px 64px 24px 64px;
+$space-squish-sm: 0px 18px 0px 18px;
+
+// Stretch inset- reducing space left and right
+$space-stretch-s: 12px 8px 12px 8px;
+$space-stretch-m: 16px 8px 16px 8px;
+$space-stretch-l: 24px 16px 24px 16px;
+$space-stretch-xl: 32px 24px 32px 24px;
+$space-stretch-xxl: 64px 32px 64px 32px;
+
+$space-stretch-s: 12px 8px 12px 8px;
+$space-stretch-m: 16px 8px 16px 8px;
+$space-stretch-l: 24px 16px 24px 16px;
+$space-stretch-xl: 32px 24px 32px 24px;
+$space-stretch-xxl: 64px 32px 64px 32px;
+
+// Stack- vertical spacing - to be deprecated
+$space-stack-xs: 0 0 4px 0;
+$space-stack-s: 0 0 8px 0;
+$space-stack-m: 0 0 16px 0;
+$space-stack-l: 0 0 24px 0;
+$space-stack-xl: 0 0 32px 0;
+$space-stack-xxl: 0 0 64px 0;
+
+:export {
+    // Space
+    inline-4: $inline-4;
+    inline-8: $inline-8;
+    inline-16: $inline-12;
+    inline-16: $inline-16;
+    inline-24: $inline-20;
+    inline-24: $inline-24;
+    inline-32: $inline-32;
+    inline-40: $inline-40;
+    inline-56: $inline-56;
+    inline-64: $inline-64;
+    inline-80: $inline-80;
+    space-none: $space-none;
+
+    // Inset- square/equal space around
+    inset-24: $inset-24;
+    inset-32: $inset-32;
+    inset-64: $inset-64;
+
+    // Stack- vertical spacing
+    stack-4: $stack-4;
+    stack-8: $stack-8;
+    stack-12: $stack-12;
+    stack-16: $stack-16;
+    stack-24: $stack-20;
+    stack-24: $stack-24;
+    stack-32: $stack-32;
+    stack-40: $stack-40;
+    stack-56: $stack-56;
+    stack-64: $stack-64;
+    stack-80: $stack-80;
+}

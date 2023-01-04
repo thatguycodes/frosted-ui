@@ -5,16 +5,26 @@ import { TableModule } from 'projects/components/src/lib/table/public-api';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HomeComponent } from './pages/home/home.component';
+import { BillingComponent } from './pages/billing/billing.component';
+import { AdministrationComponent } from './pages/administration/administration.component';
+import { EndUserManagementgComponent } from './pages/end-user-managementg/end-user-managementg.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HomeComponent,
+    BillingComponent,
+    AdministrationComponent,
+    EndUserManagementgComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     TableModule,
-    SideNavModule
+    SideNavModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,35 +1,18 @@
-<table lib-table [dataSource]="dataSource">
-  <!-- Position Column -->
-  <ng-container libColumnDef="position">
-    <th lib-header-cell *libHeaderCellDef> No. </th>
-    <td lib-cell *libCellDef="let element"> {{element.position}} </td>
-  </ng-container>
+<!--
+<router-outlet></router-outlet> -->
+<div class="main col-12 d-flex flex-row">
+  <div class=" main-nav">
+    <lib-side-nav [menus]="navbarData" [url]="selectedUrl" [state]="stateFromClient" (redirectionUrl)="redirectTo($event)" (currentState)="updateSideNavState($event)">
+      <svg logo width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+        d="M40 0C17.9088 0 0 8.95438 0 20C0 31.0456 17.9088 40 40 40C62.0912 40 80 31.0456 80 20C80 8.95438 62.0912 0 40 0ZM40 36.8425C19.6525 36.8425 3.1575 29.3019 3.1575 20C3.1575 10.6981 19.6525 3.1575 40 3.1575C60.3475 3.1575 76.8425 10.6981 76.8425 20C76.8425 29.3019 60.3475 36.8425 40 36.8425ZM34.9556 16.4912V13.3331H46.24V16.4912H42.1775V26.6669H39.0187V16.4912H34.9556ZM59.8613 13.3331V26.6669H56.7038L50.9769 18.7294V26.6669H47.8194V13.3331H50.9769L56.7038 21.2706V13.3331H59.8613ZM20.045 26.6669V13.3331H23.2025L26.7106 18.7294L30.2188 13.3331H33.375V26.6669H30.2188V19.125L27.8237 22.8063H25.5975L23.2025 19.125V26.6669H20.045Z"
+        fill="black"
+        />
+      </svg>
+    </lib-side-nav>
+  </div>
+  <div class=" bg-grey main-body">
+    <router-outlet></router-outlet>
+  </div>
+</div>
 
-  <!-- Name Column -->
-  <ng-container libColumnDef="name">
-    <th lib-header-cell *libHeaderCellDef> Name </th>
-    <td lib-cell *libCellDef="let element"> {{element.name}} </td>
-  </ng-container>
-
-  <!-- Weight Column -->
-  <ng-container libColumnDef="weight">
-    <th lib-header-cell *libHeaderCellDef> Weight </th>
-    <td lib-cell *libCellDef="let element"> {{element.weight}} </td>
-  </ng-container>
-
-  <!-- Symbol Column -->
-  <ng-container libColumnDef="symbol">
-    <th lib-header-cell *libHeaderCellDef> Symbol </th>
-    <td lib-cell *libCellDef="let element"> {{element.symbol}} </td>
-  </ng-container>
-
-  <ng-container libColumnDef="delete">
-    <th lib-header-cell *libHeaderCellDef> Delete </th>
-    <td lib-cell *libCellDef="let element">  <button class="btn">delete</button> </td>
-  </ng-container>
-
-  <tr lib-header-row *libHeaderRowDef="displayedColumns"></tr>
-  <tr lib-row *libRowDef="let row; columns: displayedColumns;"></tr>
-</table>
-
-<lib-table><ng-content></ng-content></lib-table>

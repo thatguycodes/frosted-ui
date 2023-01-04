@@ -1,0 +1,87 @@
+<!-- This component is the parent wrapping up the side nav -->
+
+<div class="side-panel" [ngClass]="collapsed ? 'side-panel-collapsed' : ''" libMouseover>
+	<div class="side-panel-wrapper">
+		<div class="side-panel-header" [ngClass]="collapsed ? 'side-panel-header-collapsed' : ''">
+			<ng-content selelct="[logo]"></ng-content>
+			<div
+				class="side-panel-header-text"
+				[innerHTML]="sidePanelHeaderHTML | htmlBypassSecurity"
+				[ngClass]="collapsed ? 'side-panel-header-text-collapsed' : ''"
+			></div>
+		</div>
+		<div class="side-panel-body">
+			<ul class="side-panel-body-content" [ngClass]="collapsed ? 'side-panel-body-content-collapsed' : ''">
+				<!-- This is the Parent level menu which is on index 0 of the hierarchy -->
+				<div *ngIf="level === 0">
+					<li
+						(click)="selectNav(menu)"
+						*ngFor="let menu of menus"
+						class="side-panel-body-content-link"
+						[ngClass]="collapsed ? 'side-panel-body-content-link-collapsed' : ''"
+						tabindex="0"
+						[ngClass]="getActiveClass(menu)"
+					>
+						<span [innerHTML]="menu?.icon | htmlBypassSecurity" class="side-panel-body-content-link-icon"></span>
+						<span class="side-panel-body-content-link-text" *ngIf="!collapsed">{{ menu?.label }}</span>
+					</li>
+				</div>
+				<!-- This is the back button that navigate a level higher on the hierarchy to display the previous menu -->
+
+				<li
+					*ngIf="level > 0"
+					(click)="back()"
+					class="side-panel-body-content-link"
+					tabindex="0"
+					[ngClass]="collapsed ? 'side-panel-body-content-link-collapsed' : ''"
+				>
+					<span class="side-panel-body-content-link-icon">
+						<svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+							<path
+								d="M5.6252 7.9998C5.6252 7.8998 5.6502 7.7998 5.7252 7.7248L9.7252 3.7248C9.8752 3.5748 10.1002 3.5748 10.2502 3.7248C10.4002 3.8748 10.4002 4.0998 10.2502 4.2498L6.5252 7.9998L10.2752 11.7248C10.4252 11.8748 10.4252 12.0998 10.2752 12.2498C10.1252 12.3998 9.9002 12.3998 9.7502 12.2498L5.7502 8.2498C5.6502 8.1998 5.6252 8.0998 5.6252 7.9998Z"
+								fill="black"
+							/>
+						</svg>
+					</span>
+					<span class="side-panel-body-content-link-text-back" *ngIf="!collapsed">Back</span>
+				</li>
+
+				<!-- This is update menu  -->
+				<li
+					*ngIf="level > 0"
+					class="side-panel-body-content-parent-link"
+					tabindex="0"
+					[ngClass]="collapsed ? 'side-panel-body-content-parent-link-collapsed' : ''"
+				>
+					<span [innerHTML]="newMainMenu?.icon | htmlBypassSecurity" class="side-panel-body-content-link-icon"></span>
+					<span class="side-panel-body-content-link-text" *ngIf="!collapsed">{{ newMainMenu?.label }}</span>
+				</li>
+				<!-- This is the submenu of the updated menu -->
+				<li *ngIf="level > 0 && newMainMenu?.items && newMainMenu?.items?.length > 0">
+					<span>
+						<vivid-sublevel-menu [menus]="newMainMenu?.items" [level]="level" [url]="url" (subMenuUrl)="updateUrl($event)" (currentState)="updateSideNavState($event)"> </vivid-sublevel-menu>
+					</span>
+				</li>
+			</ul>
+		</div>
+		<div class="side-panel-footer" [ngClass]="collapsed ? 'side-panel-footer-collapsed' : ''">
+			<ul class="side-panel-footer-content">
+				<li
+					class="side-panel-footer-content-link"
+					tabindex="0"
+					(click)="logOut()"
+					[ngClass]="collapsed ? 'side-panel-footer-content-link-collapsed' : ''"
+				>
+					<svg svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<path d="M12.0042 21L21 21L21 3L12 3" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M7.5 7.5L3 12L7.5 16.5" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+						<path d="M16 12.0042L3 12.0041" stroke="black" stroke-linecap="round" stroke-linejoin="round" />
+					</svg>
+					<span class="side-panel-body-content-link-text" *ngIf="!collapsed">Log out</span>
+				</li>
+			</ul>
+			<a [href]="termsAndConditionsUrl" tabindex="0" class="side-panel-footer-tnc" *ngIf="!collapsed">Terms and conditions</a>
+			<a [href]="termsAndConditionsUrl" tabindex="0" class="side-panel-footer-tnc" *ngIf="collapsed">T&C</a>
+		</div>
+	</div>
+</div>

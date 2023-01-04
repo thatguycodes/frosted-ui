@@ -1,0 +1,347 @@
+// MTN fonts import
+@import url('https://onlinecms.mtn.co.za/sites/default/files/vivid-fonts.css');
+// Work sans font import
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:200,300,400,500,600,700');
+// Color variables
+@import '../styles/colors.scss';
+
+body {
+    font-size: 16px;
+    font-family: 'MTNBrighterSans-Regular', Arial, sans-serif;
+}
+
+// Base font style pre-defined mixins
+@mixin micro-8 {
+    @include base-font-reg;
+    font-size: 8px;
+}
+
+@mixin micro-10 {
+    @include base-font-bold;
+    font-size: 10px;
+    letter-spacing: 0;
+}
+
+@mixin micro-12 {
+    @include base-font-semi-bold;
+    font-size: 12px;
+}
+
+@mixin micro-14 {
+    @include base-font-semi-bold;
+    font-size: 14px;
+}
+
+@mixin body-16 {
+    @include base-font-reg;
+    font-size: 1rem;
+}
+
+@mixin body-18 {
+    @include base-font-medium;
+    font-size: 18px;
+}
+
+@mixin body-20 {
+    @include base-font-medium;
+    font-size: 20px;
+}
+
+@mixin heading-24 {
+    @include base-font-medium;
+    font-size: 24px;
+}
+
+@mixin heading-28 {
+    @include base-font-light;
+    font-size: 28px;
+}
+
+@mixin heading-30 {
+    @include base-font-semi-bold();
+    font-size: 30px;
+}
+
+@mixin heading-32 {
+    @include base-font-reg;
+    font-size: 32px;
+}
+
+@mixin heading-40 {
+    @include base-font-light;
+    font-size: 40px;
+}
+
+@mixin display-48 {
+    @include base-font-light;
+    font-size: 48px;
+}
+
+@mixin display-56 {
+    @include base-font-light;
+    font-size: 56px;
+}
+
+@mixin display-64 {
+    @include base-font-light;
+    font-size: 64px;
+}
+
+@mixin base-font-normal {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: normal;
+}
+
+@mixin base-font-min-light {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 100;
+}
+
+@mixin base-font-light-200 {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 200;
+}
+
+@mixin base-font-light {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 300;
+}
+
+@mixin base-font-reg {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 400;
+}
+
+@mixin base-font-medium {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+@mixin base-font-semi-bold {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+}
+
+@mixin base-font-bold {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 700;
+}
+
+@mixin base-font-max-bold {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: bold;
+}
+
+@mixin heading-font-light {
+    font-family: 'MTNBrighterSans-Light', Arial, sans-serif;
+    font-weight: 300;
+}
+
+@mixin heading-font-reg {
+    font-family: 'MTNBrighterSans-Regular', Arial, sans-serif;
+    font-weight: 400;
+}
+
+@mixin heading-font-medium {
+    font-family: 'MTNBrighterSans-Medium', Arial, sans-serif;
+    font-weight: 500;
+}
+
+@mixin heading-font-bold {
+    font-family: 'MTNBrighterSans-Bold', Arial, sans-serif;
+    font-weight: 700;
+}
+
+@mixin heading-font-extra-bold {
+    font-family: 'MTNBrighterSans-ExtraBold', Arial, sans-serif;
+    font-weight: 800;
+}
+
+@mixin subheading-font {
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 600;
+}
+
+// Body font weight variables
+$font-weight-extra-light: 200;
+$font-weight-light: 300;
+$font-weight-reg: 400;
+$font-weight-medium: 500;
+$font-weight-semi-bold: 600;
+$font-weight-bold: 700;
+$font-weight-extra-bold: 800;
+
+// Headings font weight variables
+$heading-font-extrabold: 'MTNBrighterSans-ExtraBold', Arial, sans-serif;
+$heading-font-bold: 'MTNBrighterSans-Bold', Arial, sans-serif;
+$heading-font-reg: 'MTNBrighterSans-Regular', Arial, sans-serif;
+$heading-font-light: 'MTNBrighterSans-Light', Arial, sans-serif;
+$heading-font-extra-light: 'MTNBrighterSans-ExtraLight', Arial, sans-serif;
+$heading-font-light-italic: 'MTNBrighterSans-Light-Italic', Arial, sans-serif;
+$heading-font-italic: 'MTNBrighterSans-Bold-Italic', Arial, sans-serif;
+$heading-font-bright: 'MTN Brighter Sans ExtraLight', Arial, sans-serif;
+$heading-font-brighter-bold: 'MTN Brighter Sans Bold', Arial, sans-serif;
+$heading-font-medium: 'Work Sans Medium', Arial, sans-serif;
+
+// Override heading font classes - To be used outside component classes
+.font-heading-extra-bold {
+    font-family: $heading-font-extrabold !important;
+}
+
+.font-heading-bold {
+    font-family: $heading-font-bold !important;
+}
+
+.font-heading-reg {
+    font-family: $heading-font-reg !important;
+}
+
+.font-heading-light {
+    font-family: $heading-font-light !important;
+}
+
+.font-heading-extra-light {
+    font-family: $heading-font-extra-light !important;
+}
+
+.font-heading-light-italic {
+    font-family: $heading-font-light-italic !important;
+}
+
+.font-heading-italic {
+    font-family: $heading-font-italic !important;
+}
+
+// Override base font classes - To be used outside component classes
+.font-base-extra-bold {
+    @include base-font-max-bold;
+}
+
+.font-base-bold {
+    @include base-font-bold;
+}
+
+.font-base-semi-bold {
+    @include base-font-semi-bold;
+}
+
+.font-base-medium {
+    @include base-font-medium;
+}
+
+.font-base-regular {
+    @include base-font-reg;
+}
+
+.font-base-light {
+    @include base-font-light;
+}
+
+.font-base-light-200 {
+    @include base-font-light-200;
+}
+
+.font-base-min-light {
+    @include base-font-min-light;
+}
+
+.font-base-min-normal {
+    @include base-font-normal;
+}
+
+// Override font classes from font mixins - To be used outside component classes
+.font-micro-8 {
+    @include micro-8;
+}
+
+.font-micro-12 {
+    @include micro-12;
+}
+
+.font-body-16 {
+    @include body-16;
+    margin-bottom: 0 !important;
+}
+
+.font-body-20 {
+    @include body-20;
+    margin-bottom: 0 !important;
+}
+
+.font-heading-24 {
+    @include heading-24;
+    margin-bottom: 0 !important;
+}
+
+.font-heading-28 {
+    @include heading-28;
+    margin-bottom: 0 !important;
+}
+
+.font-heading-32 {
+    @include heading-32;
+    margin-bottom: 0 !important;
+}
+
+.font-display-48 {
+    @include display-48;
+    margin-bottom: 0 !important;
+}
+
+.font-display-64 {
+    @include display-64;
+    margin-bottom: 0 !important;
+}
+
+.font-display-56 {
+    @include display-56;
+    margin-bottom: 0 !important;
+}
+
+.brighter-heading-32 {
+    @include heading-font-bold;
+    color: $raven;
+    font-size: 32px;
+    letter-spacing: 0;
+    line-height: 48px;
+    height: 48px;
+}
+
+.brighter-heading-48 {
+    @include heading-font-bold;
+    color: $raven;
+    font-size: 48px;
+    line-height: 48px;
+    height: 48px;
+    padding-top: 8px;
+}
+
+.brighter-heading-56 {
+    @include heading-font-bold;
+    color: $raven;
+    font-size: 56px;
+    letter-spacing: 0;
+    line-height: 56px;
+}
+
+@mixin letter-spacing-02 {
+    letter-spacing: -0.2px;
+}
+
+.ebu-details-header-12{
+    color: $nero;
+    @include micro-12;
+    padding-bottom: 1.125rem; // Pixel value is 18px
+    height: 0.5rem; // Pixel value is 8px
+    line-height: 0.5rem; // Pixel value is 8px
+    @include letter-spacing-02;
+}
+
+.ebu-details-value-16{
+    color: $nero;
+    @include base-font-light;
+    font-size: 1.125rem;  // Pixel value is 18px
+    height: 0.75rem; // Pixel value is 12px
+    line-height: 0.75rem; // Pixel value is 12px
+    @include letter-spacing-02;
+}
