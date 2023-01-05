@@ -1,30 +1,32 @@
-@import '../../styles/colors.scss';
-@import '../../styles//spacing.scss';
-@import '../../styles/typography.scss';
+@import "../../styles/colors.scss";
+@import "../../styles//spacing.scss";
+@import "../../styles/typography.scss";
 
-
+// * {
+//   border: 1px solid red;
+// }
 li {
-	&:hover {
-	  text-decoration: none;
-	}
-	&:focus-visible {
-	  outline-style: solid;
-	  outline-width: 1px;
-	  outline-color: #3f9fc3;
-	}
+  &:hover {
+    text-decoration: none;
   }
+  &:focus-visible {
+    outline-style: solid;
+    outline-width: 1px;
+    outline-color: #3f9fc3;
+  }
+}
 
-  .side-panel-container {
-	width: 36.375rem;
-	height: 100vh;
-  }
+.side-panel-container {
+  width: 36.375rem;
+  height: 100vh;
+}
 
 .side-panel {
   background-color: $cloud;
   width: 36.375rem;
   height: 100vh;
   top: 0;
-  border-right: 1px solid  rgba(0, 0, 0, 0.08);
+  border-right: 1px solid rgba(0, 0, 0, 0.08);
 
   &-wrapper {
     display: flex;
@@ -42,187 +44,180 @@ li {
       top: 1rem;
       position: relative;
       @include heading-font-extra-bold;
-	  font-size: 1.25rem;
+      font-size: 1.25rem;
     }
   }
-    &-body {
-      position: relative;
-      top: 2.6875rem;
-      height: 100%;
-      left: 16.5rem;
-	  background-color: transparent;
-	  padding-top: $inline-40;
-	  &-content {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		padding: 0;
-		width: 324px;
+  &-body {
+    position: relative;
+    top: 2.6875rem;
+    height: 100%;
+    left: 16.5rem;
+    background-color: transparent;
+    padding-top: $inline-40;
+    &-content {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      width: 324px;
 
-		&-link {
-			width: 318px;
-			height: 48px;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			margin: 2px 0px 2px 0px;
-			@include heading-font-light;
-				font-size: 16px;
-				// color: $raven;
+      &-link {
+        width: 318px;
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin: 2px 0px 2px 0px;
+        @include heading-font-light;
+        font-size: 16px;
+        // color: $raven;
 
-			&:hover {
-				cursor: pointer;
-				background-color: $pearl;
-				border-right: $inline-4 solid  $sunshine;
-                border-radius: $inline-8 0.125rem 0.125rem $inline-8;
-			}
-			&:active {
-				@include heading-font-extra-bold;
-				border-right: $inline-4 solid  $raven;
-			}
-			&-text {
-				margin-left: 16px;
+        &:hover {
+          cursor: pointer;
+          background-color: $pearl;
+          border-right: $inline-4 solid $sunshine;
+          border-radius: $inline-8 0.125rem 0.125rem $inline-8;
+        }
+        &:active {
+          @include heading-font-extra-bold;
+          border-right: $inline-4 solid $raven;
+        }
+        &-text {
+          margin-left: 16px;
 
-				&:active {
-					@include heading-font-extra-bold;
-				}
-				&-back {
-					@include heading-font-extra-bold;
-					font-size: 14px;
-					left: 8px;
-				}
-
-			}
-			&-active {
-				background-color: $pearl;
-				border-right: $inline-4 solid  $sunshine;
-                border-radius: $inline-8 0.125rem 0.125rem $inline-8;
-                @include heading-font-extra-bold;
-
-			}
-		}
-
-	  }
+          &:active {
+            @include heading-font-extra-bold;
+          }
+          &-back {
+            @include heading-font-extra-bold;
+            font-size: 14px;
+            left: 8px;
+          }
+        }
+        &-active {
+          background-color: $pearl;
+          border-right: $inline-4 solid $sunshine;
+          border-radius: $inline-8 0.125rem 0.125rem $inline-8;
+          @include heading-font-extra-bold;
+        }
+      }
     }
-    &-footer {
-      position: absolute;
-      bottom: 0;
-      left: 17.5rem;
-	  &-content {
-		list-style: none;
-		display: flex;
-		flex-direction: column;
-		align-items: flex-start;
-		padding: 0;
-		bottom: 60px;
-		&-link {
-			width: 318px;
-			height: 48px;
-			display: flex;
-			flex-direction: row;
-			align-items: center;
-			bottom: 60px;
-			@include base-font-light;
-				font-size: 16px;
-				color: $raven;
-			&:hover {
-				cursor: pointer;
-				background-color: $pearl;
-				border-right: $inline-4 solid  $sunshine;
-                border-radius: $inline-8 0.125rem 0.125rem $inline-8;
-
-			}
-			&:active {
-				@include heading-font-extra-bold;
-				border-right: $inline-4 solid  $raven;
-			}
-			&:focus {
-				background-color: $pearl;
-				border-right: $inline-4 solid  $sunshine;
-                border-radius: $inline-8 0.125rem 0.125rem $inline-8;
-                @include heading-font-extra-bold;
-			}
-			&-text {
-				margin-left: 16px;
-
-			}
-	  }
-	}
-	  &-tnc{
-		@include heading-font-reg;
-		color: $raven;
-		left: $inline-32;
-		bottom: 30px;
-		margin-right: 30px;
-		font-weight: 300;
-		font-size: 12px;
-		line-height: 100%;
-		text-decoration: underline;
-		&:focus-visible,
-		&:focus{
-			padding: $inline-4;
-			border-radius: $inline-8;
-			border: 0.125rem solid $navy;
-			margin: 0;
-			outline: none;
-			svg path{
-				stroke: $sunshine;
-			}
-		}
-	}
+  }
+  &-footer {
+    position: absolute;
+    bottom: 0;
+    left: 17.5rem;
+    &-content {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0;
+      bottom: 60px;
+      &-link {
+        width: 318px;
+        height: 48px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        bottom: 60px;
+        @include base-font-light;
+        font-size: 16px;
+        color: $raven;
+        &:hover {
+          cursor: pointer;
+          background-color: $pearl;
+          border-right: $inline-4 solid $sunshine;
+          border-radius: $inline-8 0.125rem 0.125rem $inline-8;
+        }
+        &:active {
+          @include heading-font-extra-bold;
+          border-right: $inline-4 solid $raven;
+        }
+        &:focus {
+          background-color: $pearl;
+          border-right: $inline-4 solid $sunshine;
+          border-radius: $inline-8 0.125rem 0.125rem $inline-8;
+          @include heading-font-extra-bold;
+        }
+        &-text {
+          margin-left: 16px;
+        }
+      }
     }
+    &-tnc {
+      @include heading-font-reg;
+      color: $raven;
+      left: $inline-32;
+      bottom: 30px;
+      margin-right: 30px;
+      font-weight: 300;
+      font-size: 12px;
+      line-height: 100%;
+      text-decoration: underline;
+      &:focus-visible,
+      &:focus {
+        padding: $inline-4;
+        border-radius: $inline-8;
+        border: 0.125rem solid $navy;
+        margin: 0;
+        outline: none;
+        svg path {
+          stroke: $sunshine;
+        }
+      }
+    }
+  }
 }
-
 
 /*  ****************************   C O L L A P S E D    M E N U    S T Y L E S  ************************************* */
 
 .side-panel-collapsed {
-width: 19.5rem;
+  width: 19.5rem;
 }
 
 .side-panel-header-collapsed {
-	left: 13.5625rem;
+  left: 13.5625rem;
 }
 
 .side-panel-header-text-collapsed {
-	color: transparent;
+  color: transparent;
 }
 .side-panel-body-content-collapsed {
- width: 3rem;
+  width: 3rem;
 }
 .side-panel-body-content-link-collapsed {
-	width: 3rem;
-	&-active {
-		width: 3rem;
-		background-color: $pearl;
-		border-right: $inline-4 solid  $sunshine;
-		border-radius: $inline-8 0.125rem 0.125rem $inline-8;
-		@include heading-font-extra-bold;
-
-	}
+  width: 3rem;
+  &-active {
+    width: 3rem;
+    background-color: $pearl;
+    border-right: $inline-4 solid $sunshine;
+    border-radius: $inline-8 0.125rem 0.125rem $inline-8;
+    @include heading-font-extra-bold;
+  }
 }
 
 .side-panel-footer-collapsed {
-width: 48px;
+  width: 48px;
 }
 .side-panel-footer-content-link-collapsed {
-	width: 3rem;
+  width: 3rem;
 }
 
 /*  ****************************   C O L L A P S E D    M E N U    S T Y L E S  ************************************* */
 .sublevel-nav {
-    list-style: none;
-    margin-left: 10px;
-	&-item {
-		&-link {
-			display: flex;
-            align-items: center;
-            height: 3rem;
-            color: #898989;
-            text-decoration: none;
-            border-radius: 0.625rem;
-            transition: all .3s ease;
-		}
-	}
+  list-style: none;
+  margin-left: 10px;
+  &-item {
+    &-link {
+      display: flex;
+      align-items: center;
+      height: 3rem;
+      color: #898989;
+      text-decoration: none;
+      border-radius: 0.625rem;
+      transition: all 0.3s ease;
+    }
+  }
 }

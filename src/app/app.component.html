@@ -1,7 +1,7 @@
 <!--
 <router-outlet></router-outlet> -->
 <div class="main col-12 d-flex flex-row">
-  <div class=" main-nav">
+  <div class=" main-nav" [ngClass]="{'main-nav-no-collapsed': noCollapse}">
     <lib-side-nav [menus]="navbarData" [url]="selectedUrl" [state]="stateFromClient" (redirectionUrl)="redirectTo($event)" (currentState)="updateSideNavState($event)">
       <svg logo width="80" height="40" viewBox="0 0 80 40" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
@@ -11,7 +11,7 @@
       </svg>
     </lib-side-nav>
   </div>
-  <div class=" bg-grey main-body">
+  <div class=" bg-grey main-body" [ngClass]="{'main-nav-no-collapsed-body': noCollapse}">
     <router-outlet></router-outlet>
   </div>
 </div>

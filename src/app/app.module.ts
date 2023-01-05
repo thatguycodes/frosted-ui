@@ -10,6 +10,7 @@ import { BillingComponent } from './pages/billing/billing.component';
 import { AdministrationComponent } from './pages/administration/administration.component';
 import { EndUserManagementgComponent } from './pages/end-user-managementg/end-user-managementg.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SupportComponent } from './pages/support/support.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HomeComponent,
     BillingComponent,
     AdministrationComponent,
-    EndUserManagementgComponent
+    EndUserManagementgComponent,
+    SupportComponent
   ],
   imports: [
     BrowserModule,

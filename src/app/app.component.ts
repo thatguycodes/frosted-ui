@@ -1,9 +1,12 @@
 import { DataSource } from '@angular/cdk/collections';
 import { Component, OnInit } from '@angular/core';
-import { NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { Observable } from 'rxjs/internal/Observable';
-import { navbarData, stateFromClient} from '../../projects/components/src/lib/side-nav/utils/nav-data'
+import {
+  navbarData,
+  stateFromClient,
+} from '../../projects/components/src/lib/side-nav/utils/nav-data';
 
 export interface PeriodicElement {
   name: string;
@@ -47,30 +50,52 @@ export class AppComponent implements OnInit {
   //   pagination: []
   // };
   stateFromClient: any;
-  selectedUrl: string = '/home';
+  selectedUrl: string = '';
+  noCollapse: boolean = false;
 
-  constructor(private router: Router) {}
-  ngOnInit(): void {
+  constructor(private router: Router) {
     this.router.events.forEach((event) => {
       if (event instanceof NavigationStart) {
         this.selectedUrl = event.url;
-
         // Your code
         // Use (event.url) to get URL that is being navigated
       }
     });
+  }
+  ngOnInit(): void {
+    this.selectedUrl = window.location.href;
+    if (
+      this.selectedUrl?.includes('home') ||
+      this.selectedUrl?.includes('support')
+    ) {
+      this.noCollapse = false;
+    } else {
+      this.noCollapse = true;
+    }
+
+    /*  this.router.events.forEach((event) => {
+      if (event instanceof NavigationStart) {
+        this.selectedUrl = event.url;
+        // Your code
+        // Use (event.url) to get URL that is being navigated
+      }
+    }); */
     const state = localStorage.getItem('state') ?? {};
-    this.stateFromClient = JSON.parse(state.toString())
+    this.stateFromClient = JSON.parse(state.toString());
   }
 
   redirectTo(url: string) {
     this.router.navigate([url]);
     this.selectedUrl = url;
+    if (url === '/home' || url === '/support') {
+      this.noCollapse = false;
+    } else {
+      this.noCollapse = true;
+    }
   }
 
   updateSideNavState(state: any) {
     localStorage.setItem('state', JSON.stringify(state));
-
   }
 }
 /**

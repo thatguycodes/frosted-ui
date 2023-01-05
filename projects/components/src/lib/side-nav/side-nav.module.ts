@@ -7,13 +7,12 @@ import { SubLevelMenuComponent } from './sub-level-menu/sub-level-menu.component
 import { MouseoverDirective } from './side-nav/mouseover.directive';
 
 
-
 @NgModule({
   declarations: [
     SideNavComponent,
     HtmlBypassSecurityPipe,
     SubLevelMenuComponent,
-    MouseoverDirective
+    MouseoverDirective,
   ],
   imports: [
     CommonModule

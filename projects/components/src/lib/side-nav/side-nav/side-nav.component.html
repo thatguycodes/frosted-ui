@@ -18,7 +18,7 @@
 						(click)="selectNav(menu)"
 						*ngFor="let menu of menus"
 						class="side-panel-body-content-link"
-						[ngClass]="collapsed ? 'side-panel-body-content-link-collapsed' : ''"
+            [ngClass]="{'side-panel-body-content-link-collapsed' : collapsed}"
 						tabindex="0"
 						[ngClass]="getActiveClass(menu)"
 					>
@@ -57,7 +57,7 @@
 					<span class="side-panel-body-content-link-text" *ngIf="!collapsed">{{ newMainMenu?.label }}</span>
 				</li>
 				<!-- This is the submenu of the updated menu -->
-				<li *ngIf="level > 0 && newMainMenu?.items && newMainMenu?.items?.length > 0">
+				<li *ngIf="level > 0 && newMainMenu?.items && newMainMenu?.items?.length > 0" [ngClass]="collapsed ? 'side-panel-body-content-parent-link-collapsed' : ''">
 					<span>
 						<vivid-sublevel-menu [menus]="newMainMenu?.items" [level]="level" [url]="url" (subMenuUrl)="updateUrl($event)" (currentState)="updateSideNavState($event)"> </vivid-sublevel-menu>
 					</span>

@@ -4,11 +4,13 @@ import { AdministrationComponent } from './pages/administration/administration.c
 import { BillingComponent } from './pages/billing/billing.component';
 import { EndUserManagementgComponent } from './pages/end-user-managementg/end-user-managementg.component';
 import { HomeComponent } from './pages/home/home.component';
+import { SupportComponent } from './pages/support/support.component';
 
 const routes: Routes = [
   {path: '',  pathMatch: 'full', redirectTo: '/home'},
   {path: 'home', component: HomeComponent},
   {path: 'billing', component: BillingComponent},
+  {path: 'support', component: SupportComponent},
   {path: 'organisation/administration/add-user', component: AdministrationComponent},
   {path: 'organisation/end-user-management', component: EndUserManagementgComponent},
 
